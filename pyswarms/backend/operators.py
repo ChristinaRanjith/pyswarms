@@ -128,7 +128,6 @@ def compute_velocity(swarm, clamp, vh, bounds=None):
         c1 = swarm.options["c1"]
         c2 = swarm.options["c2"]
         w = swarm.options["w"]
-        w=1.2
         # Compute for cognitive and social terms
         cognitive = (
             c1
@@ -140,7 +139,8 @@ def compute_velocity(swarm, clamp, vh, bounds=None):
             * np.random.uniform(0, 1, swarm_size)
             * (swarm.best_pos - swarm.position)
         )
-        # Compute temp velocity (subject to clamping if possible)
+        w=0.5+(np.random())/2
+               # Compute temp velocity (subject to clamping if possible)
         temp_velocity = (w * swarm.velocity) + cognitive + social
         updated_velocity = vh(
             temp_velocity, clamp, position=swarm.position, bounds=bounds
