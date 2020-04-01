@@ -10,14 +10,13 @@ to specify how the swarm will behave.
 
 # Import standard library
 import logging
+from functools import partial
 
 # Import modules
 import numpy as np
 
 from ..utils.reporter import Reporter
 from .handlers import BoundaryHandler, VelocityHandler
-from functools import partial
-
 
 rep = Reporter(logger=logging.getLogger(__name__))
 
