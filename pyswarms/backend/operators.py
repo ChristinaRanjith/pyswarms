@@ -128,6 +128,7 @@ def compute_velocity(swarm, clamp, vh, bounds=None):
         c1 = swarm.options["c1"]
         c2 = swarm.options["c2"]
         w = swarm.options["w"]
+        w=1.2
         # Compute for cognitive and social terms
         cognitive = (
             c1
